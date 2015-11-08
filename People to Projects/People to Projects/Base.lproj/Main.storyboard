@@ -205,11 +205,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmb-ig-V2f">
-                                <rect key="frame" x="200" y="58" width="200" height="200"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pranav Jain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmb-ig-V2f">
+                                <rect key="frame" x="-12" y="-58" width="396" height="315"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="61"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="dvK-1F-gfM">
+                                <rect key="frame" x="122" y="162" width="128" height="128"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nt-45-smN">
+                                <rect key="frame" x="-12" y="189" width="396" height="315"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="61"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -220,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v9g-t2-D1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="786" y="645"/>
+            <point key="canvasLocation" x="792" y="633"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -311,7 +322,7 @@
                                     </label>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="FRV-iQ-Zqn" firstAttribute="centerX" secondItem="ku0-1B-odp" secondAttribute="centerX" id="0MN-K9-Qx8"/>
                                     <constraint firstItem="FRV-iQ-Zqn" firstAttribute="top" secondItem="jZI-lQ-bUs" secondAttribute="bottom" constant="3" id="1g0-mX-KbF"/>
@@ -330,7 +341,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcY-SE-cy9">
                                 <rect key="frame" x="554" y="28" width="30" height="30"/>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="04Q-k0-Nbw"/>
                                     <constraint firstAttribute="width" constant="30" id="LOn-pe-6pB"/>
@@ -482,7 +493,7 @@
                                     </button>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="sTo-49-i0c" secondAttribute="centerX" constant="-0.75" id="5Ho-76-bap"/>
                                     <constraint firstAttribute="centerX" secondItem="Loa-Fk-oQp" secondAttribute="centerX" id="97g-XJ-hib"/>
@@ -568,7 +579,7 @@
                                             <constraint firstAttribute="width" constant="112" id="nCq-hf-xOC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ABp-cL-kDp">
@@ -599,7 +610,7 @@
                                     </button>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="VsU-Kl-kBb" firstAttribute="centerX" secondItem="ABp-cL-kDp" secondAttribute="centerX" constant="0.5" id="NTu-JU-3ya"/>
                                     <constraint firstAttribute="centerX" secondItem="VsU-Kl-kBb" secondAttribute="centerX" constant="-1" id="OQn-Lc-3pf"/>
@@ -614,7 +625,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3A-he-VKQ">
                                 <rect key="frame" x="554" y="28" width="30" height="30"/>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="Rl0-At-WbZ"/>
                                     <constraint firstAttribute="height" constant="30" id="xeY-9o-cb5"/>
@@ -674,6 +685,7 @@
         <image name="Projects" width="26" height="26"/>
         <image name="bar" width="300" height="20"/>
         <image name="close" width="64" height="64"/>
+        <image name="user" width="126" height="126"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Pai-Y5-aPv"/>

@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        self.view.backgroundColor = UIColorFromRGB(0x65ff7c);
     }
     override func viewWillAppear(animated: Bool) {
         if (PFUser == "unknown") {
@@ -24,6 +25,14 @@ class ProfileViewController: UIViewController {
                 self.presentViewController(viewController, animated: true, completion: nil)
             })
         }
+    }
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
 
     override func didReceiveMemoryWarning() {
