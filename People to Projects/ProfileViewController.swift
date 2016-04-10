@@ -11,17 +11,19 @@ import Firebase
 
 var PFUser = "unknown";
 class ProfileViewController: UIViewController {
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        self.view.backgroundColor = UIColorFromRGB(0x65ff7c);
+        //self.view.backgroundColor = UIColorFromRGB(0x65ff7c);
     }
     override func viewWillAppear(animated: Bool) {
         if (PFUser == "unknown") {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 
                 let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Login")
+                //nameLabel.text("Tesst")
                 self.presentViewController(viewController, animated: true, completion: nil)
             })
         }

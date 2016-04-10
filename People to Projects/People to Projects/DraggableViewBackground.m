@@ -2,8 +2,8 @@
 //  DraggableViewBackground.m
 //  testing swiping
 //
-//  Created by Richard Kim on 8/23/14.
-//  Copyright (c) 2014 Richard Kim. All rights reserved.
+//  Created by Pranav Jain on 11/7/15.
+//  Copyright (c) 2015 Pranav Jain. All rights reserved.
 //
 
 #import "DraggableViewBackground.h"

@@ -2,10 +2,9 @@
 //  DraggableView.m
 //  testing swiping
 //
-//  Created by Richard Kim on 5/21/14.
-//  Copyright (c) 2014 Richard Kim. All rights reserved.
+//  Created by Pranav Jain on 11/7/15.
+//  Copyright (c) 2015 Pranav Jain. All rights reserved.
 //
-//  @cwRichardKim for updates and requests
 
 #define ACTION_MARGIN 120 //%%% distance from center where the action applies. Higher = swipe further in order for the action to be called
 #define SCALE_STRENGTH 4 //%%% how quickly the card shrinks. Higher = slower shrinking

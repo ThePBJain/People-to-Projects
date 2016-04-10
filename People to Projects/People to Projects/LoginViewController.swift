@@ -70,6 +70,10 @@ class LoginViewController: UIViewController {
                             let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MyTable") as! UIViewController
                             self.presentViewController(viewController, animated: true, completion: nil)
                             PFUser = "known"
+                            ref.observeEventType(.ChildAdded, withBlock: { snapshot in
+                                print(snapshot.value.valueForKey("ecb5af8f-acae-4841-abcb-b8a02be70600")?.description)
+                                
+                            })
                         })
 
                     }
