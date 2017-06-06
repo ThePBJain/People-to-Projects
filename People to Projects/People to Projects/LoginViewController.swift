@@ -34,10 +34,10 @@ class LoginViewController: UIViewController {
     }
     */
     
-    @IBAction func unwindToLogInScreen(segue:UIStoryboardSegue) {
+    @IBAction func unwindToLogInScreen(_ segue:UIStoryboardSegue) {
     }
     
-    @IBAction func loginAction(sender: AnyObject) {
+    @IBAction func loginAction(_ sender: AnyObject) {
         var username = self.usernameField.text
         var password = self.passwordField.text
         
@@ -52,12 +52,12 @@ class LoginViewController: UIViewController {
             
         } else {
             // Run a spinner to show a task in progress
-            var spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
+            var spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 150, height: 150)) as UIActivityIndicatorView
             spinner.startAnimating()
             
             // Send a request to login
             let ref = Firebase(url: "https://popping-heat-3486.firebaseio.com")
-            ref.authUser(username, password: password,
+            ref?.authUser(username, password: password,
                 withCompletionBlock: { error, authData in
                      spinner.stopAnimating()
                     if error != nil {
@@ -66,12 +66,12 @@ class LoginViewController: UIViewController {
                     } else {
                         // We are now logged in
                         print(authData)
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MyTable") as! UIViewController
-                            self.presentViewController(viewController, animated: true, completion: nil)
+                        DispatchQueue.main.async(execute: { () -> Void in
+                            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyTable") 
+                            self.present(viewController, animated: true, completion: nil)
                             PFUser = "known"
-                            ref.observeEventType(.ChildAdded, withBlock: { snapshot in
-                                print(snapshot.value.valueForKey("ecb5af8f-acae-4841-abcb-b8a02be70600")?.description)
+                            ref.observe(.childAdded, with: { snapshot in
+                                print(snapshot.value.value(forKey: "ecb5af8f-acae-4841-abcb-b8a02be70600")?.description as Any)
                                 
                             })
                         })
@@ -80,10 +80,10 @@ class LoginViewController: UIViewController {
             })
             //var data = Firebase(url:"https://docs-examples.firebaseio.com/web/saving-data/fireblog/posts")
             // Retrieve new posts as they are added to your database
-            ref.observeEventType(.ChildAdded, withBlock: { snapshot in
-                print(snapshot.value.valueForKey("peopleToProjects")?.description)
+            ref?.observe(.childAdded, with: { snapshot in
+                print(((snapshot?.value as AnyObject).value(forKey: "peopleToProjects") as AnyObject).description)
                 //data.append((snapshot.value.valueForKey("peopleToProjects")?.description)!)
-                print("The project is: \(snapshot.value.objectForKey("projects"))")
+                print("The project is: \((snapshot?.value as AnyObject).object(forKey: "projects"))")
             })
            
         }

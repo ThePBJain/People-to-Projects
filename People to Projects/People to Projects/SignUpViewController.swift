@@ -25,43 +25,43 @@ class SignUpViewController: UIViewController {
     }
     
 
-    @IBAction func signUpAction(sender: AnyObject) {
+    @IBAction func signUpAction(_ sender: AnyObject) {
         
         var username = self.usernameField.text
         var password = self.passwordField.text
         var email = self.emailField.text
-        var finalEmail = email!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        let finalEmail = email!.trimmingCharacters(in: CharacterSet.whitespaces)
         
         // Validate the text fields
         if username!.characters.count < 5 {
-            var alert = UIAlertView(title: "Invalid", message: "Username must be greater than 5 characters", delegate: self, cancelButtonTitle: "OK")
+            let alert = UIAlertView(title: "Invalid", message: "Username must be greater than 5 characters", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
         } else if password!.characters.count < 8 {
-            var alert = UIAlertView(title: "Invalid", message: "Password must be greater than 8 characters", delegate: self, cancelButtonTitle: "OK")
+            let alert = UIAlertView(title: "Invalid", message: "Password must be greater than 8 characters", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
         } else if email!.characters.count < 8 {
-            var alert = UIAlertView(title: "Invalid", message: "Please enter a valid email address", delegate: self, cancelButtonTitle: "OK")
+            let alert = UIAlertView(title: "Invalid", message: "Please enter a valid email address", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             
         } else {
             // Run a spinner to show a task in progress
-            var spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(0, 0, 150, 150)) as UIActivityIndicatorView
+            let spinner: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 150, height: 150)) as UIActivityIndicatorView
             spinner.startAnimating()
             let ref = Firebase(url: "https://popping-heat-3486.firebaseio.com")
-            ref.createUser(finalEmail, password: password,
+            ref?.createUser(finalEmail, password: password,
                 withValueCompletionBlock: { error, result in
                     spinner.stopAnimating()
                     if error != nil {
                         // There was an error creating the account
                          print("Error: \(error)")
                     } else {
-                        let uid = result["uid"] as? String
+                        let uid = result?["uid"] as? String
                         print("Successfully created user account with uid: \(uid)")
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Login")
-                            self.presentViewController(viewController, animated: true, completion: nil)
+                        DispatchQueue.main.async(execute: { () -> Void in
+                            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login")
+                            self.present(viewController, animated: true, completion: nil)
                         })
                     }
             })

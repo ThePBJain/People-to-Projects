@@ -199,6 +199,7 @@
 					6A63EACE1BEEBAE300310276 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = WJDVJGMV64;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -376,6 +377,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "People to Projects/People to Projects-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -397,6 +399,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "PranavJain.People-to-Projects";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "People to Projects/People to Projects-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

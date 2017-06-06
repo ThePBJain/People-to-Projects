@@ -18,17 +18,17 @@ class ProfileViewController: UIViewController {
         // Do view setup here.
         //self.view.backgroundColor = UIColorFromRGB(0x65ff7c);
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         if (PFUser == "unknown") {
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            DispatchQueue.main.async(execute: { () -> Void in
                 
-                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Login")
+                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login")
                 //nameLabel.text("Tesst")
-                self.presentViewController(viewController, animated: true, completion: nil)
+                self.present(viewController, animated: true, completion: nil)
             })
         }
     }
-    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+    func UIColorFromRGB(_ rgbValue: UInt) -> UIColor {
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,

@@ -22,23 +22,23 @@ class ResetPasswordViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func passwordReset(sender: AnyObject) {
-        var email = self.emailField.text
-        var finalEmail = email!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+    @IBAction func passwordReset(_ sender: AnyObject) {
+        let email = self.emailField.text
+        let finalEmail = email!.trimmingCharacters(in: CharacterSet.whitespaces)
         
         // Send a request to reset a password
         let ref = Firebase(url: "https://popping-heat-3486.firebaseio.com")
-        ref.resetPasswordForUser(finalEmail, withCompletionBlock: { error in
+        ref?.resetPassword(forUser: finalEmail, withCompletionBlock: { error in
             if error != nil {
                 // There was an error processing the request
-                var alert = UIAlertController (title: "Password Reset", message: "Error: Email failed to send. ", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
+                let alert = UIAlertController (title: "Password Reset", message: "Error: Email failed to send. ", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             } else {
                 // Password reset sent successfully
-                var alert = UIAlertController (title: "Password Reset", message: "An email containing information on how to reset your password has been sent to " + finalEmail + ".", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
+                let alert = UIAlertController (title: "Password Reset", message: "An email containing information on how to reset your password has been sent to " + finalEmail + ".", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
         })
         
